@@ -12,14 +12,9 @@ namespace LinkedList
             linkedListObj.Add(56);
             linkedListObj.Add(70);
             linkedListObj.Insert(2, 30);
+            int key = linkedListObj.Search(30);
+            linkedListObj.Insert(key+1, 40);
             Display(linkedListObj);
-            linkedListObj.Pop();
-            linkedListObj.Insert(2, 45);
-            linkedListObj.Insert(4, 99);
-            Display(linkedListObj);
-            linkedListObj.PopLast();
-            Display(linkedListObj);
-            linkedListObj.Search(45);
         }
         static void Display(LinkedListClass linkedListObj)
         {
