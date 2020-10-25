@@ -8,18 +8,15 @@ namespace LinkedList
         {
             Console.WriteLine("Welcome to Linked List Assignment");
             Console.WriteLine("=================================");
-            LinkeListClass linkedListObj = new LinkeListClass();
+            LinkedListClass linkedListObj = new LinkedListClass(new[] { 20, 70, 33 });
             linkedListObj.Add(32);
             linkedListObj.Add(34);
             try
             {
                 foreach (int data in linkedListObj.Display())
-
-                {
                     Console.WriteLine(data);
-                }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

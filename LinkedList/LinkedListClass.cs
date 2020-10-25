@@ -4,35 +4,45 @@ using System.Text;
 
 namespace LinkedList
 {
-    public class LinkeListClass
+    public class LinkedListClass
     {
         private Node head;
+        public LinkedListClass()
+        {
+        }
+        public LinkedListClass(int[] datas)
+        {
+            foreach (int data in datas)
+            {
+                Add(data);
+            }
+        }
         public void Add(int data)
         {
             Node newNode = new Node(data);
-            if(head==null)
+            if (head == null)
             {
                 head = newNode;
             }
             else
             {
                 Node tempNode = head;
-                while(tempNode.next!=null)
+                while (tempNode.next != null)
                 {
                     tempNode = tempNode.next;
                 }
-                tempNode.next = newNode; 
+                tempNode.next = newNode;
             }
         }
         public List<int> Display()
         {
-            if(head==null)
+            if (head == null)
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
             else
             {
                 List<int> dataList = new List<int>();
                 Node tempNode = head;
-                while(tempNode!=null)
+                while (tempNode != null)
                 {
                     dataList.Add(tempNode.data);
                     tempNode = tempNode.next;

@@ -12,7 +12,7 @@ namespace LinkedListMSTest
         public void Stored_Values_In_Linked_List_Should_Be_Displayed_Correctly()
         {
             List<int> expected = new List<int>() { 32,34};
-            LinkeListClass testingObj = new LinkeListClass();
+            LinkedListClass testingObj = new LinkedListClass();
             testingObj.Add(32);
             testingObj.Add(34);
             int i = 0;
@@ -25,7 +25,7 @@ namespace LinkedListMSTest
         [TestMethod]
         public void No_Values_In_Linked_List_Should_Throw_LinkedListException()
         {
-            LinkeListClass testingObj = new LinkeListClass();
+            LinkedListClass testingObj = new LinkedListClass();
             try
             {
                 testingObj.Display();
