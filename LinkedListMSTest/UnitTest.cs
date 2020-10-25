@@ -95,5 +95,15 @@ namespace LinkedListMSTest
                 i++;
             }
         }
+        [TestMethod]
+        public void Search_Should_Return_Position_Of_Data_When_Data_IS_Present()
+        {
+            int expected = 1;
+            LinkedListClass testingObj = new LinkedListClass();
+            testingObj.Add(90);
+            testingObj.Add(87);
+            int result = testingObj.Search(90);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
