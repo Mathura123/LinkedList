@@ -65,7 +65,7 @@ namespace LinkedListMSTest
         [TestMethod]
         public void Deleted_First_Node_Via_Pop_Method_Should_Be_Display_Correctly()
         {
-            List<int> expected = new List<int>() {  56, 34, 90 ,87};
+            List<int> expected = new List<int>() { 56, 34, 90, 87 };
             LinkedListClass testingObj = new LinkedListClass(new[] { 32, 34 });
             testingObj.Add(90);
             testingObj.Insert(2, 56);
@@ -115,9 +115,25 @@ namespace LinkedListMSTest
                 testingObj.Add(87);
                 int result = testingObj.Search(79);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.Message, "79 not found in Linked List");
+            }
+        }
+        [TestMethod]
+        public void Deleted_A_Node_Should_Display_Correctly_When_Data_Is_Present()
+        {
+            List<int> expected = new List<int>() { 90, 89 };
+            LinkedListClass testingObj = new LinkedListClass();
+            testingObj.Add(90);
+            testingObj.Add(34);
+            testingObj.Add(89);
+            testingObj.Delete(34);
+            int i = 0;
+            foreach (int item in testingObj.GetLinkedListDatas())
+            {
+                Assert.AreEqual(expected[i], item);
+                i++;
             }
         }
     }

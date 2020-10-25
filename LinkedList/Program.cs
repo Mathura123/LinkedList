@@ -9,14 +9,14 @@ namespace LinkedList
             Console.WriteLine("Welcome to Linked List Assignment");
             Console.WriteLine("=================================");
             LinkedListClass linkedListObj = new LinkedListClass();
-            //linkedListObj.Add(56);
-            //linkedListObj.Add(70);
-            //linkedListObj.Insert(2, 30);
-            //int key = linkedListObj.Search(30);
-            //linkedListObj.Insert(key+1, 40);
-            //Display(linkedListObj);
+            linkedListObj.Add(56);
+            linkedListObj.Add(70);
+            linkedListObj.Insert(2, 30);
+            int key = linkedListObj.Search(30);
+            linkedListObj.Insert(key + 1, 40);
+            Display(linkedListObj);
             linkedListObj.Delete(40);
-            //Display(linkedListObj);
+            Display(linkedListObj);
         }
         static void Display(LinkedListClass linkedListObj)
         {
