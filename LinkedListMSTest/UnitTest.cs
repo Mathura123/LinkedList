@@ -105,5 +105,20 @@ namespace LinkedListMSTest
             int result = testingObj.Search(90);
             Assert.AreEqual(result, expected);
         }
+        [TestMethod]
+        public void Search_Should_Throw_LinkedLIstException_When_Data_IS_Not_Present()
+        {
+            try
+            {
+                LinkedListClass testingObj = new LinkedListClass();
+                testingObj.Add(90);
+                testingObj.Add(87);
+                int result = testingObj.Search(79);
+            }
+            catch(Exception e)
+            {
+                Assert.AreEqual(e.Message, "79 not found in Linked List");
+            }
+        }
     }
 }
