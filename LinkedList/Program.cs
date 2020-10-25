@@ -10,8 +10,8 @@ namespace LinkedList
             Console.WriteLine("=================================");
             LinkedListClass linkedListObj = new LinkedListClass();
             linkedListObj.Add(56);
-            linkedListObj.Add(30);
             linkedListObj.Add(70);
+            linkedListObj.Insert(2, 30);
             Display(linkedListObj);
         }
         static void Display(LinkedListClass linkedListObj)

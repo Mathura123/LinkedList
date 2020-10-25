@@ -8,7 +8,8 @@ namespace LinkedList
     {
         public enum ExceptionType
         {
-            NO_DATA
+            NO_DATA,
+            OUT_OF_RANGE
         }
         private ExceptionType type;
         public LinkedListException(ExceptionType type, string message):base(message)

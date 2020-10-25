@@ -37,7 +37,7 @@ namespace LinkedList
         }
         public List<int> GetLinkedListDatas()
         {
-            if (head == null)
+            if(head==null)
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
             else
             {
@@ -49,6 +49,35 @@ namespace LinkedList
                     tempNode = tempNode.next;
                 }
                 return dataList;
+            }
+        }
+        public void Insert(int position, int data)
+        {
+            try
+            {
+                Node newNode = new Node(data);
+                if (position == 1)
+                {
+                    newNode.next = head;
+                    head = newNode;
+                }
+                else
+                {
+                    Node tempNode = head;
+                    int i = 2;
+                    while (i != position)
+                    {
+                        tempNode = tempNode.next;
+                        i++;
+                    }
+                    newNode.next = tempNode.next;
+                    tempNode.next = newNode;
+                }
+                Console.WriteLine($"{data} inserted at position {position}");
+            }
+            catch
+            {
+                throw new LinkedListException(LinkedListException.ExceptionType.OUT_OF_RANGE, "The position entered is out of Range");
             }
         }
     }
