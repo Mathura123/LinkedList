@@ -107,6 +107,24 @@ namespace LinkedList
                 tempNode.next= null;
             }
         }
+        public void Delete(int data)
+        {
+            int position = Search(data);
+            Node tempNode = head;
+            if (position == 1)
+            {
+                head = head.next;
+            }
+            else
+            {
+                for (int i = 0; i < position - 2; i++)
+                {
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = tempNode.next.next;
+            }
+            Console.WriteLine($"{data} DELETED from position {position}");
+        }
         public int Search(int data)
         {
             List<int> datasList = GetLinkedListDatas();
@@ -114,7 +132,7 @@ namespace LinkedList
             {
                 if(datasList[i]==data)
                 {
-                    Console.WriteLine($"{data} found at position {i+1}");
+                    Console.WriteLine($"{data} FOUND at position {i+1}");
                     return i+1;
                 }
             }
