@@ -11,12 +11,12 @@ namespace LinkedListMSTest
         [TestMethod]
         public void Stored_Values_In_Linked_List_Should_Be_Displayed_Correctly()
         {
-            List<int> expected = new List<int>() { 32,34};
+            List<int> expected = new List<int>() { 32, 34 };
             LinkedListClass testingObj = new LinkedListClass();
             testingObj.Add(32);
             testingObj.Add(34);
             int i = 0;
-            foreach(int item in testingObj.Display())
+            foreach (int item in testingObj.Display())
             {
                 Assert.AreEqual(expected[i], item);
                 i++;
@@ -30,9 +30,21 @@ namespace LinkedListMSTest
             {
                 testingObj.Display();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.Message, "No data found in Linked List");
+            }
+        }
+        [TestMethod]
+        public void Stored_Values_In_Linked_List_Using_Constructor_Should_Be_Displayed_Correctly()
+        {
+            List<int> expected = new List<int>() { 32, 34 };
+            LinkedListClass testingObj = new LinkedListClass(new[] { 32, 34 });
+            int i = 0;
+            foreach (int item in testingObj.Display())
+            {
+                Assert.AreEqual(expected[i], item);
+                i++;
             }
         }
     }
