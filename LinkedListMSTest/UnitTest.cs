@@ -47,5 +47,20 @@ namespace LinkedListMSTest
                 i++;
             }
         }
+        [TestMethod]
+        public void Inserted_Value_At_Any_Position_Should_Be_Displayed_Correctly()
+        {
+            List<int> expected = new List<int>() { 32, 56, 34, 90, 87 };
+            LinkedListClass testingObj = new LinkedListClass(new[] { 32, 34 });
+            testingObj.Add(90);
+            testingObj.Insert(2, 56);
+            testingObj.Add(87);
+            int i = 0;
+            foreach (int item in testingObj.GetLinkedListDatas())
+            {
+                Assert.AreEqual(expected[i], item);
+                i++;
+            }
+        }
     }
 }
