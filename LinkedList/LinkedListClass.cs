@@ -33,8 +33,9 @@ namespace LinkedList
                 }
                 tempNode.next = newNode;
             }
+            Console.WriteLine($"{data} Added");
         }
-        public List<int> Display()
+        public List<int> GetLinkedListDatas()
         {
             if (head == null)
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");

@@ -16,7 +16,7 @@ namespace LinkedListMSTest
             testingObj.Add(32);
             testingObj.Add(34);
             int i = 0;
-            foreach (int item in testingObj.Display())
+            foreach (int item in testingObj.GetLinkedListDatas())
             {
                 Assert.AreEqual(expected[i], item);
                 i++;
@@ -28,7 +28,7 @@ namespace LinkedListMSTest
             LinkedListClass testingObj = new LinkedListClass();
             try
             {
-                testingObj.Display();
+                testingObj.GetLinkedListDatas();
             }
             catch (Exception e)
             {
@@ -41,7 +41,7 @@ namespace LinkedListMSTest
             List<int> expected = new List<int>() { 32, 34 };
             LinkedListClass testingObj = new LinkedListClass(new[] { 32, 34 });
             int i = 0;
-            foreach (int item in testingObj.Display())
+            foreach (int item in testingObj.GetLinkedListDatas())
             {
                 Assert.AreEqual(expected[i], item);
                 i++;
