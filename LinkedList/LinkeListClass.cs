@@ -4,9 +4,9 @@ using System.Text;
 
 namespace LinkedList
 {
-    class LinkeListClass
+    public class LinkeListClass
     {
-        public Node head;
+        private Node head;
         public void Add(int data)
         {
             Node newNode = new Node(data);

@@ -9,8 +9,8 @@ namespace LinkedList
             Console.WriteLine("Welcome to Linked List Assignment");
             Console.WriteLine("=================================");
             LinkeListClass linkedListObj = new LinkeListClass();
-            linkedListObj.Add(1);
-            linkedListObj.Add(2);
+            linkedListObj.Add(32);
+            linkedListObj.Add(34);
             try
             {
                 foreach (int data in linkedListObj.Display())
