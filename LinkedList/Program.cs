@@ -16,7 +16,6 @@ namespace LinkedList
             linkedListObj.Pop();
             linkedListObj.Insert(2, 45);
             Display(linkedListObj);
-
         }
         static void Display(LinkedListClass linkedListObj)
         {

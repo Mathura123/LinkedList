@@ -62,5 +62,21 @@ namespace LinkedListMSTest
                 i++;
             }
         }
+        [TestMethod]
+        public void Deleted_First_Node_Via_Pop_Method_Should_Be_Display_Correctly()
+        {
+            List<int> expected = new List<int>() {  56, 34, 90 ,87};
+            LinkedListClass testingObj = new LinkedListClass(new[] { 32, 34 });
+            testingObj.Add(90);
+            testingObj.Insert(2, 56);
+            testingObj.Add(87);
+            testingObj.Pop();
+            int i = 0;
+            foreach (int item in testingObj.GetLinkedListDatas())
+            {
+                Assert.AreEqual(expected[i], item);
+                i++;
+            }
+        }
     }
 }
