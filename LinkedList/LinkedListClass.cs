@@ -95,9 +95,7 @@ namespace LinkedList
         public void PopLast()
         {
             if (head == null)
-            {
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
-            }
             else
             {
                 Node tempNode = head;
