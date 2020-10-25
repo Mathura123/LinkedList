@@ -13,14 +13,18 @@ namespace LinkedList
             linkedListObj.Add(70);
             linkedListObj.Insert(2, 30);
             Display(linkedListObj);
+            linkedListObj.Pop();
+            linkedListObj.Insert(2, 45);
+            Display(linkedListObj);
+
         }
         static void Display(LinkedListClass linkedListObj)
         {
             try
             {
-                Console.WriteLine();
                 foreach (int data in linkedListObj.GetLinkedListDatas())
                     Console.Write($"{data} -> ");
+                Console.WriteLine();
             }
             catch (Exception e)
             {

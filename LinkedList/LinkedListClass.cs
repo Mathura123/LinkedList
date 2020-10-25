@@ -33,7 +33,7 @@ namespace LinkedList
                 }
                 tempNode.next = newNode;
             }
-            Console.WriteLine($"{data} Added");
+            Console.WriteLine($"{data} ADDED");
         }
         public List<int> GetLinkedListDatas()
         {
@@ -73,11 +73,23 @@ namespace LinkedList
                     newNode.next = tempNode.next;
                     tempNode.next = newNode;
                 }
-                Console.WriteLine($"{data} inserted at position {position}");
+                Console.WriteLine($"{data} INSERTED at position {position}");
             }
             catch
             {
                 throw new LinkedListException(LinkedListException.ExceptionType.OUT_OF_RANGE, "The position entered is out of Range");
+            }
+        }
+        public void Pop()
+        {
+            if(head==null)
+            {
+                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
+            }
+            else
+            {
+                Console.WriteLine($"{head.data} at first position DELETED");
+                head = head.next;
             }
         }
     }
