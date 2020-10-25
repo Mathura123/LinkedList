@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LinkedList;
 using System.Collections.Generic;
+using System;
 
 namespace LinkedListMSTest
 {
@@ -19,6 +20,19 @@ namespace LinkedListMSTest
             {
                 Assert.AreEqual(expected[i], item);
                 i++;
+            }
+        }
+        [TestMethod]
+        public void No_Values_In_Linked_List_Should_Throw_LinkedListException()
+        {
+            LinkeListClass testingObj = new LinkeListClass();
+            try
+            {
+                testingObj.Display();
+            }
+            catch(Exception e)
+            {
+                Assert.AreEqual(e.Message, "No data found in Linked List");
             }
         }
     }
