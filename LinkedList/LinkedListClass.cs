@@ -107,5 +107,18 @@ namespace LinkedList
                 tempNode.next= null;
             }
         }
+        public int Search(int data)
+        {
+            List<int> datasList = GetLinkedListDatas();
+            for(int i=0;i<datasList.Count;i++)
+            {
+                if(datasList[i]==data)
+                {
+                    Console.WriteLine($"{data} found at position {i+1}");
+                    return i+1;
+                }
+            }
+            throw new LinkedListException(LinkedListException.ExceptionType.NOT_IN_LIST, $"{data} not found in Linked List");
+        }
     }
 }

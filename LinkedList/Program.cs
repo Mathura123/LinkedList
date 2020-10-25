@@ -19,6 +19,7 @@ namespace LinkedList
             Display(linkedListObj);
             linkedListObj.PopLast();
             Display(linkedListObj);
+            linkedListObj.Search(45);
         }
         static void Display(LinkedListClass linkedListObj)
         {
