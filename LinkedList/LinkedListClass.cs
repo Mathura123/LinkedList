@@ -92,5 +92,22 @@ namespace LinkedList
                 head = head.next;
             }
         }
+        public void PopLast()
+        {
+            if (head == null)
+            {
+                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
+            }
+            else
+            {
+                Node tempNode = head;
+                while((tempNode.next).next!=null)
+                {
+                    tempNode = tempNode.next;
+                }
+                Console.WriteLine($"{tempNode.next.data} at last position DELETED");
+                tempNode.next= null;
+            }
+        }
     }
 }
