@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LinkedList;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LinkedListProblem
 {
-    public class SortedLinkedList : LinkedList
+    public class SortedLinkedList : LinkedList, ILinkedList
     {
         public SortedLinkedList()
         {
@@ -55,33 +56,7 @@ namespace LinkedListProblem
                 return datasList;
             }
         }
-        public override void Display()
-        {
-            try
-            {
-                foreach (int data in Sort())
-                    Console.Write($"{data} -> ");
-                Console.WriteLine();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-        public override void Pop()
-        {
-            if (head == null)
-            {
-                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
-            }
-            else
-            {
-                Sort();
-                Console.WriteLine($"{head.data} at first position DELETED");
-                head = head.next;
-            }
-        }
-        public override void PopLast()
+        public new void PopLast()
         {
             if (head == null)
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
@@ -95,6 +70,32 @@ namespace LinkedListProblem
                 }
                 Console.WriteLine($"{tempNode.next.data} at last position DELETED");
                 tempNode.next = null;
+            }
+        }
+        public new void Pop()
+        {
+            if (head == null)
+            {
+                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
+            }
+            else
+            {
+                Sort();
+                Console.WriteLine($"{head.data} at first position DELETED");
+                head = head.next;
+            }
+        }
+        public new void Display()
+        {
+            try
+            {
+                foreach (int data in Sort())
+                    Console.Write($"{data} -> ");
+                Console.WriteLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }

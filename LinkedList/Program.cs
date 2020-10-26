@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinkedList;
+using System;
 
 namespace LinkedListProblem
 {
@@ -9,7 +10,7 @@ namespace LinkedListProblem
             Console.WriteLine("Welcome to Linked List Assignment");
             Console.WriteLine("=================================");
             Console.WriteLine("\nWorking on Simple Linked List");
-            LinkedList linkedListObj = new LinkedList();
+            ILinkedList linkedListObj = new LinkedList();
             linkedListObj.Add(56);
             linkedListObj.Add(9);
             linkedListObj.Add(70);
@@ -19,7 +20,7 @@ namespace LinkedListProblem
             linkedListObj.Display();
 
             Console.WriteLine("\nWorking on Sorted Linked List");
-            SortedLinkedList sortedLinkedListObj = new SortedLinkedList();
+            ILinkedList sortedLinkedListObj = new SortedLinkedList();
             sortedLinkedListObj.Add(45);
             sortedLinkedListObj.Add(4);
             sortedLinkedListObj.Add(9);

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LinkedList;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LinkedListProblem
 {
-    public class LinkedList
+    public class LinkedList : ILinkedList
     {
         protected Node head;
         public LinkedList()
@@ -35,22 +36,6 @@ namespace LinkedListProblem
             }
             Console.WriteLine($"{data} ADDED");
         }
-        private List<int> GetLinkedListDatas()
-        {
-            if (head == null)
-                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
-            else
-            {
-                List<int> dataList = new List<int>();
-                Node tempNode = head;
-                while (tempNode != null)
-                {
-                    dataList.Add(tempNode.data);
-                    tempNode = tempNode.next;
-                }
-                return dataList;
-            }
-        }
         protected void DoInsert(int position, int data)
         {
             try
@@ -79,7 +64,7 @@ namespace LinkedListProblem
                 throw new LinkedListException(LinkedListException.ExceptionType.OUT_OF_RANGE, "The position entered is out of Range");
             }
         }
-        protected void DoDelete(int data)
+        private void DoDelete(int data)
         {
             int position = DoSearch(data);
             Node tempNode = head;
@@ -108,7 +93,7 @@ namespace LinkedListProblem
             }
             throw new LinkedListException(LinkedListException.ExceptionType.NOT_IN_LIST, $"{data} not found in Linked List");
         }
-        public virtual void Pop()
+        public void Pop()
         {
             if (head == null)
             {
@@ -120,7 +105,7 @@ namespace LinkedListProblem
                 head = head.next;
             }
         }
-        public virtual void PopLast()
+        public void PopLast()
         {
             if (head == null)
                 throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
@@ -139,7 +124,7 @@ namespace LinkedListProblem
         {
             Node tempNode = head;
             int position = 1;
-            while((tempNode.data!=nodeToBeDeleted.data) || (tempNode.next!=nodeToBeDeleted.next))
+            while ((tempNode.data != nodeToBeDeleted.data) || (tempNode.next != nodeToBeDeleted.next))
             {
                 position++;
                 tempNode = tempNode.next;
@@ -171,20 +156,57 @@ namespace LinkedListProblem
                 Console.WriteLine(e.Message);
             }
         }
-        public void Insert(int position,int data)
+        public void Insert(int position, int data)
         {
-            DoInsert(position, data);
-            Console.WriteLine($"{data} INSERTED at position {position}");
+            try
+            {
+                DoInsert(position, data);
+                Console.WriteLine($"{data} INSERTED at position {position}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
         public void Delete(int data)
         {
-            DoDelete(data);
-            Console.WriteLine($"{data} DELETED");
+            try
+            {
+                DoDelete(data);
+                Console.WriteLine($"{data} DELETED");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
         public void Search(int data)
         {
-            int position =DoSearch(data);
-            Console.WriteLine($"{data} FOUND at position {position}");
+            try
+            {
+                int position = DoSearch(data);
+                Console.WriteLine($"{data} FOUND at position {position}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        private List<int> GetLinkedListDatas()
+        {
+            if (head == null)
+                throw new LinkedListException(LinkedListException.ExceptionType.NO_DATA, "No data found in Linked List");
+            else
+            {
+                List<int> dataList = new List<int>();
+                Node tempNode = head;
+                while (tempNode != null)
+                {
+                    dataList.Add(tempNode.data);
+                    tempNode = tempNode.next;
+                }
+                return dataList;
+            }
         }
     }
 }
