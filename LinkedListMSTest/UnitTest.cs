@@ -8,7 +8,7 @@ namespace LinkedListMSTest
     [TestClass]
     public class UnitTest
     {
-        
+
         [TestMethod]
         public void Deleted_A_Node_Should_Throw_LinkedListException_When_Data_Is_Not_Present()
         {
@@ -20,12 +20,10 @@ namespace LinkedListMSTest
                 testingObj.Add(89);
                 testingObj.Delete(35);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.Message, "35 not found in Linked List");
             }
         }
-        [TestMethod]
-
     }
 }
